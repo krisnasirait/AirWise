@@ -3,6 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+def apiKeys = new Properties()
+apiKeys.load(new FileInputStream(rootProject.file("apikeys.properties")))
+
 android {
     namespace 'com.krisna.airwise'
     compileSdk 33
@@ -22,6 +25,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField "String", "IQair_KEY", apiKeys.getProperty("IQair_KEY")
+        }
+        release {
+            buildConfigField "String", "IQair_KEY", apiKeys.getProperty("IQair_KEY")
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +39,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
