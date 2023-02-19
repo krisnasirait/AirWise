@@ -6,7 +6,7 @@ import okhttp3.Response
 class AirVisualInterceptor(private val apiKey: String) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request().newBuilder()
-            .addHeader("apikey", apiKey)
+            .addHeader("key", apiKey)
             .build()
         return chain.proceed(request)
     }
