@@ -53,4 +53,7 @@ dependencies {
 
     //splash screen
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 }
