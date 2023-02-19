@@ -188,5 +188,4 @@
             android:textAlignment="center"
             android:layout_weight="1" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
